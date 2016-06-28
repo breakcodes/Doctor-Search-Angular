@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!-- This is the homepage for the app-->
+<html lang='en'>
+	<head>
+		<title>Practo</title>
+	    <meta charset='utf-8'>
+	    <meta name='viewport' content='width=device-width, initial-scale=1'>
+	    <link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+	    <link rel='stylesheet' type='text/css' href='css/style.css'/>
+	    <script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js'></script>
+	    <script src = 'modules/module.js' ></script>
+		<script src = 'controllers/searchCtrl.js' ></script>
+	</head>
+
+<body>
+	<!-- Header Begin -->
+	<div class='row'>
+		<div class='header'>
+			<div class='col-lg-4 col-md-4 col-xs-4 col-xm-4'>
+	            <img class='image-header' src='images/practo-logo.png' alt='Google'>
+	  	    </div>
+		</div>
+	</div>
+	<!-- Header End -->
+	<hr class='line-break'>
+
+	<h1><center>Find and Book</center></h1>
+	<!-- Search module starts -->
+	<div ng-app='searchApp' ng-controller='searchCtrl' >
+
+	<div id='details-box' class='input-group input-group-sm'>
+	    <div class='row'>
+	        <input type='text' class='form-control' placeholder='What Speciality you looking for?' ng-model='speciality' ng-keypress='($event.which === 13)?search():0' style='width:55%' />
+	        <input type='text' class='form-control' placeholder='City' ng-model='locality' ng-keypress='($event.which === 13)?search():0' style='width:35%' />
+	        <button id='search-button' type='button' class='btn btn-default' ng-click='search()' style='width:10%'>
+	        <span class='glyphicon glyphicon-search' ></span></button>
+	    </div>
+	    <!-- error alert -->
+	    <div ng-init = 'flag = 0' ng-show = 'flag' class='alert alert-danger alert-dismissible' role='alert' style='margin-top: 30px;'>
+  			<button ng-click = 'flag=0' type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+  			Enter Atleast Location to Continue!!!!
+		</div>
+
+	</div>
+	<!-- Search module ends -->	
+</body>
+</html>

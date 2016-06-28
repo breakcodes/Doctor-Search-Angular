@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!-- This is a page for showing list of doctors -->
+<html lang='en'>
+
+<head>
+    <title>List of doctors</title>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+    <link rel='stylesheet' type='text/css' href='css/style.css'/>
+    <script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js'></script>
+    <script src = 'modules/module.js' ></script>
+    <script src = 'controllers/listCtrl.js' ></script>
+</head>
+
+<body>
+<!-- Header Begin -->
+    <div class='row'>
+        <div class='header'>
+           <div class='col-lg-4 col-md-4 col-xs-4 col-xm-4' >
+                <img class='image-header' src='images/practo-logo.png' alt='Practo' >
+            </div>
+            <div class='col-lg-4 col-md-4 col-xs-4 col-xm-4' >
+                <center>
+                    <h1><u>List Of Doctors</u></h1>
+                </center>
+            </div>
+        </div>
+    </div>
+
+    <hr class = 'line-break'>
+<!-- Header Ends -->
+<!-- ListApp Module begins -->
+    <div ng-app = 'listApp' ng-controller = 'listCtrl' >
+<!-- Error Alert -->
+        <div ng-init = 'flag = 0' ng-show = 'flag' class = 'alert alert-danger alert-dismissible list-alert' role='alert'>
+            <button ng-click = 'redirect()' type='button' class='close' data-dismiss='alert' aria-label='Close'>    <span aria-hidden='true'>&times;</span>
+            </button>
+            No doctor found with given location and speciality!!! Search Again.
+        </div>
+        
+        <div class='row list-row' ng-repeat= 'values in obj.doctors' ng-click = 'profiling()' >
+            <a>
+                <div class='col-sm-4'>
+                    <center>
+                        <img src = {{values.photos[0].url}} style='width:60%'>
+                    </center>
+                </div>
+                <div class='col-sm-8'>
+                    <table class='table table-striped table-responsive table-font'>
+                        <tr><td>NAME</td><td> {{values.doctor_name}} </td></tr>
+                        <tr><td>QUALIFICATION</td><td> {{values.qualifications[0].qualification}}</td></tr>
+                        <tr><td>EXPERIENCE SCORE</td><td>{{values.appointment_experience_score}}</td></tr>
+                        <tr><td>CONSULTATION FEE</td><td>{{values.consultation_fees}}</td></tr>
+                        <tr><td>RECOMMENDATION</td><td>{{values.recommendation_percent}}</td></tr>
+                    </table>
+                </div>
+            </a>
+
+             <div class='row'>       
+                <hr style = 'width:100%'>
+            </div>
+        </div>
+
+        <div class='row'>
+            <ul class='pager'>
+                <li><a ng-click = 'previousPage()'>Previous</a></li>
+                <li><a ng-click = 'nextPage()'>Next</a></li>
+            </ul>
+        </div>
+    </div>
+<!-- ListApp Module ends -->
+</body>
+</html>
