@@ -1,8 +1,8 @@
-body{
+body {
     background-image: url('../images/background1.jpg');
 }
 
-td{
+td {
     color:black;
 }
 /*
@@ -11,66 +11,64 @@ td{
 #details-box {
     width: 60%;
     min-width: 300px;
-    margin: auto;
-    margin-top:70px;
-    margin-bottom: 10px;
+    margin: 70px auto 10px auto;
     border-radius: 2px; 
 }
 
-#navb{
+#navb {
     position:relative;
     margin-top:180px;
 }
 
-.image-header{
+.image-header {
     height:70px; 
     margin:10px;
 }
 
-.image-profile{
+.image-profile {
     width:60%;
     height:auto; 
     outline:5px solid black;
 }
 
-.table-font{
+.table-font {
     font-color:black;
 }
 
-.profile-image-div{
-    margin-left:36%; 
-    margin-right:36%;
+.profile-image-div {
+    margin:0% 36% 0% 36%; 
     padding:10px;
 }
 
-.table-div{
-    margin-left:17%;
-    margin-right:17%;
+.table-div {
+    margin:0% 17% 0% 17%;
     padding:30px;
 }
 
-.line-break{
+.line-break {
 	width:100%;
 	margin:0px;
 }
 
-.header{
-	max-height: 300px;
+.header {
+	max-height:300px;
 }
 
-.half-line{
+.half-line {
     width:70%;
 }
 
-.hide{
+.hide {
     display: none;
 }
 
-.list-row{
-    margin-left:20%;
-    margin-right:20%
+.list-row {
+    padding:18px;
+    margin:0% 20% 0% 20%;
+    cursor:pointer;
 }
-.list-alert{
+
+.list-alert {
     margin:5% 0% 0% 25%;
     width:50%;
 }
