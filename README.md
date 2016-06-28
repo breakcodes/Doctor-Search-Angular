@@ -27,7 +27,7 @@ In the root directory,
 Usage
 -----
 
->Open the website using url 'localhost:8085/doctors'
+>Visit Doctor search using http://127.0.0.1:8085/
 
 >input location/speciality and output is the list of doctors based on filters.
 
