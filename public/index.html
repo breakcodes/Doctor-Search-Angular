@@ -31,10 +31,26 @@
 	<div ng-app='searchApp' ng-controller='searchCtrl' >
 
 	<div id='details-box' class='input-group input-group-sm'>
-	    <div class='row'>
-	        <input type='text' class='form-control' placeholder='What Speciality you looking for?' ng-model='speciality' ng-keypress='($event.which === 13)?search():0' style='width:55%' />
-	        <input type='text' class='form-control' placeholder='City' ng-model='locality' ng-keypress='($event.which === 13)?search():0' style='width:35%' />
-	        <button id='search-button' type='button' class='btn btn-default' ng-click='search()' style='width:10%'>
+	    <div class='row' ng-init = 'mark = 1'>
+	        <!-- <input type='text' class='form-control' placeholder='What Speciality you looking for?' ng-model='speciality' ng-keypress='($event.which === 13)?search():0' style='width:40%' />
+	        <input type='text' class='form-control' placeholder='City' ng-model='locality' ng-keypress='($event.which === 13)?search():0' style='width:20%' /> -->
+
+	      <select class = 'form-control' style='width:20%;' ng-model='locality' placeholder = 'cities' ng-options="item for item in cities" ng-change= 'func(locality)' ng-keypress='($event.which === 13)?search():0'>
+	      	<option value=''>Choose Location</option>
+	      </select>
+	      <select class = 'form-control' style='width:40%;' ng-disabled = 'mark' ng-model='speciality' ng-options="item for item in specialities" ng-keypress='($event.which === 13)?search():0'>
+	      	<option value=''>What Speciality You are looking for?</option>
+	      </select>
+
+	        <select class = 'form-control' style='width:20%;' ng-model = 'sort' ng-keypress='($event.which === 13)?search():0'>
+	        	<option value=''>Sort By</option>
+	        	<option value = 'practo_ranking' >Practo Ranking</option>
+	        	<option value = 'consultation_fees' >Consultation Fees</option>
+  				<option value = 'recommendation' >Recommendations</option>
+  				<option value = 'experience_year' >Experience</option>
+
+			</select>
+	        <button id='search-button' type='button' class='btn btn-default' ng-click='search()' style='width:10%;'>
 	        <span class='glyphicon glyphicon-search' ></span></button>
 	    </div>
 	    <!-- error alert -->

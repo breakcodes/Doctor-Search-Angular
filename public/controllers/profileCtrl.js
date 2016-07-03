@@ -53,18 +53,18 @@ profile.controller('profileCtrl',function($scope,$http){
                         $scope.consultationFees = $scope.obj.relations[0].consultation_fee;
                     }
                     else{
-                        $scope.consultationFees = 'Not Provided';
+                        $scope.consultationFees = 'Not available';
                     }
                     //recommendation
                     if(typeof ($scope.obj.recommendation) != 'undefined' ){
                         $scope.recommendation = $scope.obj.recommendation.recommendation;
                     }
                     else{
-                        $scope.recommendation = 'No recommendations';
+                        $scope.recommendation = 'No recommendations available';
                     }
                     //services
                     if($scope.obj.services.length == 0){
-                        $scope.services = 'No services Provided';
+                        $scope.services = 'No services available';
                     }
                     else{
                         $scope.services = $scope.obj.services[0].service.name;
@@ -74,7 +74,7 @@ profile.controller('profileCtrl',function($scope,$http){
                     }
                     //qualifications
                     if($scope.obj.qualifications.length == 0){
-                        $scope.qualifications = 'No qualifications proviced';
+                        $scope.qualifications = 'No qualifications available';
                     }
                     else{
                         $scope.qualifications = $scope.obj.qualifications[0].qualification.name;
@@ -87,7 +87,7 @@ profile.controller('profileCtrl',function($scope,$http){
                     $scope.awards = $scope.obj.awards[0].title;
                     }
                     else{
-                        $scope.awards = 'No awards';
+                        $scope.awards = 'No awards available';
                     }
                 }
             }
