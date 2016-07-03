@@ -73,6 +73,12 @@ td {
     margin:5% 0% 0% 25%;
     width:50%;
 }
+.list-photo{
+    width:60%; 
+    outline:2px solid black; 
+    margin:10px; 
+    max-height:200px;
+}
 .dropbtn {
     background-color: #4CAF50;
     color: white;

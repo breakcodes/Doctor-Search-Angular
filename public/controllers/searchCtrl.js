@@ -1,32 +1,20 @@
 //This is a controller for search module which passes request to the api
-search.controller('searchCtrl', function($scope,$http) {
-	
+practo.controller('searchCtrl', function($scope,$http,apiFactory) {
 	$scope.cities = ["Agra","Ahmedabad","Allahabad","Amritsar","Aurangabad","Bangalore","Bhopal","Chandigarh","Chennai","Coimbatore","Delhi","Ernakulam","Faridabad","Ghaziabad","Gurgaon","Hyderabad","Indore","Jaipur","Jodhpur","Kanpur","Kolkata","Lucknow","Ludhiana","Meerut","Mohali","Mumbai","Nagpur","Nashik","Navi Mumbai","Noida","Panchkula","Patna","Puducherry","Pune","Raipur","Rajkot","Ranchi","Surat","Thane","Thiruvananthapuram","Vadodara","Varanasi","Vijayawada",
 					"Visakhapatnam"];
-	
-	$scope.func = function(para){
-		
-        $scope.mark = 0;
-        
-        link = 'http://127.0.0.1:8085/doctors/meta/cities/';       
+	//populate list of specialities for a selected cities
+	$scope.populateSpecialities = function(city){
+		$scope.mark = 0;
+        var link = 'http://127.0.0.1:8085/doctors/meta/cities/';       
         var id;
-        $http({
-            method : 'get',
-            url : link
-            }).then(function(response) {
-                var citiesResponse = (JSON.parse(response.data));
-
+        apiFactory.factoryCall(link).then(function(citiesResponse) {   
                 for(var i=0;i<citiesResponse.cities.length;i++){
-                	if(citiesResponse.cities[i].name == para){
+                	if(citiesResponse.cities[i].name == city){
                 		id = citiesResponse.cities[i].id;     
                 	 }
                	}
                	link = 'http://127.0.0.1:8085/doctors/meta/cities/'+id;
-               	$http({
-	            method : 'get',
-	            url : link
-	            }).then(function(response) {
-	                var specialityResponse = (JSON.parse(response.data));
+               	apiFactory.factoryCall(link).then(function(specialityResponse) {   
 					$scope.specialities = specialityResponse.specialties;
         	});    
         });              

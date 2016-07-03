@@ -11,6 +11,7 @@
     <script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js'></script>
     <script src = 'modules/module.js' ></script>
     <script src = 'controllers/listCtrl.js' ></script>
+    <script src='factories/apiFactory.js'></script>
 </head>
 
 <body>
@@ -33,7 +34,7 @@
     <hr class = 'line-break'>
 <!-- Header Ends -->
 <!-- ListApp Module begins -->
-    <div ng-app = 'listApp' ng-controller = 'listCtrl' >
+    <div ng-app = 'practoApp' ng-controller = 'listCtrl' >
 <!-- Error Alert -->
         <div ng-init = 'flag = 0' ng-show = 'flag' class = 'alert alert-danger alert-dismissible list-alert' role='alert'>
             <button ng-click = 'redirect()' type='button' class='close' data-dismiss='alert' aria-label='Close'>    <span aria-hidden='true'>&times;</span>
@@ -45,8 +46,8 @@
             <a>
                 <div class='col-sm-4'>
                     <center>
-                        <img ng-if = 'values.photos.length > 0' src = {{values.photos[0].url}} style='width:60%; outline:2px solid black; margin:10px; max-height:200px;'>
-                         <img ng-if = 'values.photos.length == 0' src = 'https://lh3.googleusercontent.com/P0NGOaUkQNiO-PhqBhh2ywcXPAlBzP2FKrProoZ5qffK-plUBa_4NXtITCodWSI-Igw=w300' style='width:60%;outline:2px solid black; margin:10px;'>
+                        <img class = 'list-photo' ng-if = 'values.photos.length > 0' src = {{values.photos[0].url}} >
+                        <img class = 'list-photo' ng-if = 'values.photos.length == 0' src = 'https://lh3.googleusercontent.com/P0NGOaUkQNiO-PhqBhh2ywcXPAlBzP2FKrProoZ5qffK-plUBa_4NXtITCodWSI-Igw=w300'>
                     </center>
                 </div>
                 <div class='col-sm-8' style = 'overflow-x:auto;' >
