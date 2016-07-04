@@ -16,7 +16,7 @@
 <body>
 	<!-- Header Begin -->
 	<div class='row'>
-		<div class='header'>
+		<div class='header' >
 			<div class='col-lg-4 col-md-4 col-xs-4 col-xm-4'>
 	            <a href = './index.html' >
 	            	<img class='image-header' src='images/practo-logo.png' alt='Google'>
@@ -27,7 +27,7 @@
 	<!-- Header End -->
 	<hr class='line-break'>
 
-	<h1><center>Find and Book</center></h1>
+	<h1 style="color:white;"><center>Doctors Search Engine</center></h1>
 	<!-- Search module starts -->
 	<div ng-app='practoApp' ng-controller='searchCtrl' >
 
@@ -37,7 +37,7 @@
 	      		<option value=''>Choose Location</option>
 	      	</select>
 
-	      	<select class = 'form-control' style='width:40%;' ng-disabled = 'mark' ng-model='speciality' ng-options="item for item in specialities" ng-keypress='($event.which === 13)?search():0'>
+	      	<select class = 'form-control' style='width:45%;' ng-disabled = 'mark' ng-model='speciality' ng-options="item for item in specialities" ng-keypress='($event.which === 13)?search():0'>
 	      		<option value=''>What Speciality You are looking for?</option>
 	      	</select>
 
