@@ -5,7 +5,7 @@ practo.controller('profileCtrl',function($scope,$http,apiFactory){
     var pos = query.indexOf('=');   
     var key = query.substring(0, pos);
     var val = query.substring(pos + 1);
-    var link = 'http://127.0.0.1:8085/doctors/profile/'+val;
+    var link = '/doctors/profile/'+val;
 
     $scope.redirect = function(){
         $scope.flag = 0;

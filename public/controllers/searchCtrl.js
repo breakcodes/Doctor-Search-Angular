@@ -5,7 +5,7 @@ practo.controller('searchCtrl', function($scope,$http,apiFactory) {
 	//populate list of specialities for a selected cities
 	$scope.populateSpecialities = function(city){
 		$scope.mark = 0;
-        var link = 'http://127.0.0.1:8085/doctors/meta/cities/';       
+        var link = '/doctors/meta/cities/';       
         var id;
         apiFactory.factoryCall(link).then(function(citiesResponse) {   
                 for(var i=0;i<citiesResponse.cities.length;i++){
@@ -13,7 +13,7 @@ practo.controller('searchCtrl', function($scope,$http,apiFactory) {
                 		id = citiesResponse.cities[i].id;     
                 	 }
                	}
-               	link = 'http://127.0.0.1:8085/doctors/meta/cities/'+id;
+               	link = '/doctors/meta/cities/'+id;
                	apiFactory.factoryCall(link).then(function(specialityResponse) {   
 					$scope.specialities = specialityResponse.specialties;
         	});    

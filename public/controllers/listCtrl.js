@@ -57,10 +57,10 @@ practo.controller('listCtrl',function($scope,$http,$attrs,apiFactory){
         var link;
 
         if(speciality != undefined){
-            link = 'http://127.0.0.1:8085/doctors/searchLocalitySpecility/'+locality+'/'+speciality+'/'+offset+'/'+sortMethod;
+            link = '/doctors/searchLocalitySpecility/'+locality+'/'+speciality+'/'+offset+'/'+sortMethod;
         }
         else{
-            link = 'http://127.0.0.1:8085/doctors/searchLocality/'+locality+'/'+offset+'/'+sortMethod;
+            link = '/doctors/searchLocality/'+locality+'/'+offset+'/'+sortMethod;
         }
         //api factory to make call to practo Api
         apiFactory.factoryCall(link).then(function(output) {   
