@@ -15,6 +15,13 @@ practo.controller('listCtrl',function($scope,$http,$attrs,apiFactory){
     }
 
     var speciality = result.speciality;
+    var pos = -1;
+    if(speciality != undefined){
+        pos = speciality.indexOf('/');   
+        if(pos != -1){
+            speciality = speciality.substring(0, pos);
+        }
+    }
     var locality = result.locality;
     var sortMethod = result.sort_by;
     listing();
