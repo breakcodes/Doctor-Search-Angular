@@ -4,7 +4,6 @@ practo.controller('searchCtrl', function($scope,$http,apiFactory) {
 					"Visakhapatnam"];
 	//populate list of specialities for a selected cities
 	$scope.populateSpecialities = function(city){
-		$scope.mark = 0;
         var link = '/doctors/meta/cities/';       
         var id;
         apiFactory.factoryCall(link).then(function(citiesResponse) {   
@@ -16,8 +15,10 @@ practo.controller('searchCtrl', function($scope,$http,apiFactory) {
                	link = '/doctors/meta/cities/'+id;
                	apiFactory.factoryCall(link).then(function(specialityResponse) {   
 					$scope.specialities = specialityResponse.specialties;
+					$scope.mark = 0;    
         	});    
-        });              
+        }); 
+
 	}
 
 	$scope.search = function() {
