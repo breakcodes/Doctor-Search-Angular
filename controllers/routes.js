@@ -21,11 +21,11 @@ router.get('/profile/:id',function(req,res) {
             'X-CLIENT-ID' : config.clientId,
             'X-API-KEY' : config.token
         }
-    },function(error,response,body){
+    },function(error,response,body) {
         if(!error && response.statusCode == 200) {
             res.json(body);
         }
-        else{
+        else {
             res.json('{}');
             console.log('error While fetching');
         }
@@ -40,7 +40,7 @@ router.get('/meta/cities/',function(req,res) {
             'X-CLIENT-ID' : config.clientId,
             'X-API-KEY' : config.token
         }
-    },function(error,response,body){
+    },function(error,response,body) {
         if(!error && response.statusCode == 200) {
             res.json(body);
         }
@@ -63,7 +63,7 @@ router.get('/meta/cities/:city',function(req,res) {
         if(!error && response.statusCode == 200) {
             res.json(body);
         }
-        else{
+        else {
             res.json('{}');
             console.log('error While fetching');
         }
@@ -71,7 +71,7 @@ router.get('/meta/cities/:city',function(req,res) {
 });
 
 //Api to fetch doctors based on specialization and locality
-router.get('/searchLocalitySpecility/:locality/:specialization/:offset/:sortMethod',function(req,res){
+router.get('/searchLocalitySpecility/:locality/:specialization/:offset/:sortMethod',function(req,res) {
     apiUrl = 'https://api.practo.com/search/?city='+req.params.locality+'&speciality='+req.params.specialization+'&offset='+req.params.offset+'&sort_by='+req.params.sortMethod;
     request.get({
         url : apiUrl,
@@ -98,11 +98,11 @@ router.get('/searchLocality/:locality/:offset/:sortMethod',function(req,res){
             'X-CLIENT-ID' : config.clientId,
             'X-API-KEY' : config.token
         }
-    },function(error,response,body){
+    },function(error,response,body) {
         if (!error && response.statusCode == 200){
             res.json(body);
         }
-        else{
+        else {
             console.log('error While fetching');
         }
     });

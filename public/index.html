@@ -12,7 +12,7 @@
 		<script src = 'controllers/searchCtrl.js' ></script>
 		<script src='factories/apiFactory.js'></script>
 	</head>
-
+	
 <body>
 	<!-- Header Begin -->
 	<div class='row'>
@@ -55,7 +55,9 @@
 	    </div>
 	    <!-- error alert -->
 	    <div ng-init = 'flag = 0' ng-show = 'flag' class='alert alert-danger alert-dismissible' role='alert' style='margin-top: 30px;'>
-  			<button ng-click = 'flag=0' type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+  			<button ng-click = 'flag=0' type='button' class='close' data-dismiss='alert' aria-label='Close'>
+  				<span aria-hidden='true'>&times;</span>
+  			</button>
   			Enter Atleast Location to Continue!!!!
 		</div>
 	</div>

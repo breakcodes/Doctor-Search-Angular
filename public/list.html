@@ -54,28 +54,28 @@
                     <table class='table table-striped table-responsive table-font' >
                         <tr>
                             <td>NAME</td>
-                            <td ng-if = 'values.doctor_name !=undefined '> {{values.doctor_name}} </td>
-                            <td ng-if = 'values.doctor_name ==undefined '>Name Not Available</td>
+                            <td style='width:50%' ng-if = 'values.doctor_name !=undefined '> {{values.doctor_name}} </td>
+                            <td style='width:50%' ng-if = 'values.doctor_name ==undefined '>Name Not Available</td>
                         </tr>
                         <tr>
                             <td>QUALIFICATION</td>
-                            <td ng-if = 'values.qualifications.length > 0'> {{values.qualifications[0].qualification}}</td>
-                            <td ng-if = 'values.qualifications.length == 0'>No Qualifications Provided</td>
+                            <td style='width:50%' ng-if = 'values.qualifications.length > 0'> {{values.qualifications[0].qualification}}</td>
+                            <td style='width:50%' ng-if = 'values.qualifications.length == 0'>No Qualifications Provided</td>
                             </tr>
                         <tr>
                             <td>EXPERIENCE SCORE</td>
-                            <td ng-if = 'values.appointment_experience_score != undefined'>{{values.appointment_experience_score}}</td>
-                            <td ng-if = 'values.appointment_experience_score == undefined'>Score not available</td>
+                            <td style='width:50%' ng-if = 'values.appointment_experience_score != undefined'>{{values.appointment_experience_score}}</td>
+                            <td style='width:50%' ng-if = 'values.appointment_experience_score == undefined'>Score not available</td>
                             </tr>
                         <tr>
                             <td>CONSULTATION FEE</td>
-                            <td ng-if = 'values.consultation_fees != undefined'>{{values.consultation_fees}}</td>
-                            <td ng-if = 'values.consultation_fees == undefined'>Fees info not available</td>
+                            <td style='width:50%' ng-if = 'values.consultation_fees != undefined'>{{values.consultation_fees}}</td>
+                            <td style='width:50%' ng-if = 'values.consultation_fees == undefined'>Fees info not available</td>
                             </tr>
                         <tr>
                             <td>RECOMMENDATION</td>
-                            <td ng-if = 'values.recommendation_percent != undefined'>{{values.recommendation_percent}}</td>
-                            <td ng-if = 'values.recommendation_percent == undefined'>Recommendations not available</td>
+                            <td style='width:50%' ng-if = 'values.recommendation_percent != undefined'>{{values.recommendation_percent}}</td>
+                            <td style='width:50%' ng-if = 'values.recommendation_percent == undefined'>Recommendations not available</td>
                             </tr>
                     </table>
                     <div class="row">

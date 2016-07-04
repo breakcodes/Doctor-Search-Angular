@@ -1,3 +1,4 @@
+//Api factory to make call to the practo api 
 practo.factory('apiFactory', function($http) {
        var apiFactory = {
           factoryCall: function(link) {
