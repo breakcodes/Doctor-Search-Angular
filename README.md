@@ -28,7 +28,7 @@ In the root directory,
 Usage
 -----
 
->Visit Doctor search using http://127.0.0.1:8085/
+>Visit Doctor search using http://ec2-54-149-184-26.us-west-2.compute.amazonaws.com:8085/
 
 >Select the location, then based on the selected location available list of specialities get generated for that city then select specility.It also has option to sort it using various parameters, select sorting method. Then it swill display the list of doctors.
 
