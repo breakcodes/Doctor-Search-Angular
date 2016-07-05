@@ -16,7 +16,6 @@ Installation
 #Dependencies installed are
 
 "express": "4.14.0",
-"jquery": "3.0.0",
 "path": "0.12.7",
 "request": "2.72.0"
 
