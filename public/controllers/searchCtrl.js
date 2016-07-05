@@ -1,5 +1,6 @@
 //This is a controller for search module which passes request to the api
 practo.controller('searchCtrl', function($scope,$http,apiFactory) {
+	
 	$scope.cities = ['Agra','Ahmedabad','Allahabad','Amritsar','Aurangabad','Bangalore','Bhopal','Chandigarh','Chennai','Coimbatore','Delhi',
 	'Ernakulam','Faridabad','Ghaziabad','Gurgaon','Hyderabad','Indore','Jaipur','Jodhpur','Kanpur','Kolkata','Lucknow','Ludhiana','Meerut',
 	'Mohali','Mumbai','Nagpur','Nashik','Navi Mumbai','Noida','Panchkula','Patna','Puducherry','Pune','Raipur','Rajkot','Ranchi','Surat',

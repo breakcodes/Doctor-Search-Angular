@@ -5,6 +5,7 @@ A web application for searching doctors online and view their practo profiles. T
 
 >First is one the basis of location(city) only.
 >Second is based on location(city) as well as speciality of a doctor
+>You can also sort the result based on various parameters.
 
 Note : Searching only on the basis of speciality is not allowed as practo api does not allow this.
 
@@ -29,6 +30,6 @@ Usage
 
 >Visit Doctor search using http://127.0.0.1:8085/
 
->input location/speciality and output is the list of doctors based on filters.
+>Select the location, then based on the selected location available list of specialities get generated for that city then select specility.It also has option to sort it using various parameters, select sorting method. Then it swill display the list of doctors.
 
 
